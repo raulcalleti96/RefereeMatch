@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RefereeMatch</string>
+    <string name="Autor">Autor: Raul Santiago Prieto</string>
+    <string name="Jugar">Jugar</string>
+    <string name="Instrucciones">Instrucciones</string>
+    <string name="Ajustes">Ajustes</string>
+    <string name="Informacion">Información</string>
+    <string name="Nombredelprograma">Nombre del programa</string>
+    <string name="Web">Web</string>
+    <string name="Git">GitHub</string>
+    <string name="Fecha">Año</string>
+    <string name="Licencia"> Licencia</string>
+    <string name="Logo">Logo</string>
+
+</resources>
