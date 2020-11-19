@@ -11,5 +11,6 @@
     <string name="Fecha">Año</string>
     <string name="Licencia"> Licencia</string>
     <string name="Logo">Logo</string>
-
+    <string name="Personaje">Personaje</string>
+    <string name="Salir">Salir</string>
 </resources>
