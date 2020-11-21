@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1D1F2B">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
 
     <androidx.appcompat.widget.Toolbar
@@ -56,7 +62,6 @@
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageTitulo">
 
@@ -75,7 +80,7 @@
                     android:id="@+id/textJugar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/imagenjugar"
+                    android:layout_below="@id/imagenJugar"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="46dp"
@@ -86,7 +91,7 @@
                     android:textSize="24sp" />
 
                 <ImageView
-                    android:id="@+id/imagenjugar"
+                    android:id="@+id/imagenJugar"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_alignParentTop="true"
@@ -109,7 +114,7 @@
                 android:background="#26283A">
 
                 <TextView
-                    android:id="@+id/TextInstrucciones"
+                    android:id="@+id/TextIntrucciones"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ImagenInstrucciones"
@@ -131,23 +136,20 @@
                     app:srcCompat="@mipmap/instrucciones" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="391dp"
+        android:layout_width="0dp"
         android:layout_height="175dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="361dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="195dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="86dp"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="@id/linearLayout2"
-        app:layout_constraintStart_toStartOf="@id/linearLayout3"
-        app:layout_constraintTop_toTopOf="@id/linearLayout3"
-        app:layout_constraintVertical_bias="0.844">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -161,28 +163,28 @@
                 android:background="#26283A">
 
                 <TextView
-                    android:id="@+id/textPersonaje"
+                    android:id="@+id/textAjustes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/imagenPersonaje"
+                    android:layout_below="@id/imagenAjustes"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="21dp"
+                    android:layout_marginStart="46dp"
                     android:layout_marginTop="100dp"
                     android:fontFamily="@font/aclonica"
-                    android:text="@string/Personaje"
+                    android:text="@string/Ajustes"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
                 <ImageView
-                    android:id="@+id/imagenPersonaje"
+                    android:id="@+id/imagenAjustes"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:contentDescription="Imagen para personaje"
-                    app:srcCompat="@mipmap/personaje" />
+                    android:contentDescription="Imagen para Ajustes"
+                    app:srcCompat="@mipmap/ajustes" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -198,44 +200,41 @@
                 android:background="#26283A">
 
                 <TextView
-                    android:id="@+id/TextAjustes"
+                    android:id="@+id/TextPersonaje"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ImagenAjustes"
+                    android:layout_below="@id/ImagenPersonaje"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/aclonica"
-                    android:text="@string/Ajustes"
+                    android:text="@string/Personaje"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:id="@+id/ImagenAjustes"
+                    android:id="@+id/ImagenPersonaje"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:contentDescription="Imagen para ajustes"
-                    app:srcCompat="@mipmap/ajustes" />
+                    android:contentDescription="Imagen para Personaje"
+                    app:srcCompat="@mipmap/personaje" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="391dp"
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
         android:layout_height="175dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="546dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="10dp"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -255,8 +254,8 @@
                     android:layout_below="@id/imagenInfo"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginTop="101dp"
+                    android:layout_marginStart="46dp"
+                    android:layout_marginTop="100dp"
                     android:fontFamily="@font/aclonica"
                     android:text="@string/Informacion"
                     android:textColor="#FFFFFF"
@@ -304,10 +303,13 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:contentDescription="Imagen para salir"
+                    android:contentDescription="Imagen para Salir"
                     app:srcCompat="@mipmap/salir" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
