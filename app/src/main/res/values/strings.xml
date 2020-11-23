@@ -7,10 +7,20 @@
     <string name="Informacion">Info</string>
     <string name="Nombredelprograma">Nombre del programa</string>
     <string name="Web">Web</string>
+    <string name="enlaceWeb"> WWW.RaulSantiago.tech</string>
     <string name="Git">GitHub</string>
-    <string name="Fecha">Año</string>
+    <string name="enlaceGit"> https://github.com/raulcalleti96</string>
+    <string name="Fecha">Año: 2020</string>
     <string name="Licencia"> Licencia</string>
     <string name="Logo">Logo</string>
     <string name="Personaje">Personaje</string>
     <string name="Salir">Salir</string>
+    <string name="instruccionesTexto">El juego es tipo buscaminas: Cuando pulsas en una casilla,
+    sale un número que identifica cuántas elementos de un árbitro hay alrededor: Ten
+    cuidado porque si pulsas en una casilla que tenga un elemento escondido, perderás
+    Si crees o tienes la certeza de que hay un elemento, haz un clik largo sobre la casilla
+    para señalarla. No hagas un click largo en una casilla donde no hay un elemento
+    porque perderás. Ganas una vez hayas encontrado al árbitro</string>
+    <string name="dificultad">DIFICULTAD</string>
+    <string name="info"></string>
 </resources>

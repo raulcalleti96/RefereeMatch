@@ -13,18 +13,17 @@
         android:layout_height="match_parent">
 
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="#1D1F2B"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@mipmap/menu" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="#1D1F2B"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:collapseIcon="@mipmap/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextTitulo"
@@ -66,6 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageTitulo">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/Cardjugar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -103,6 +103,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardInstrucciones"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -152,6 +153,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardAjustes"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -189,6 +191,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+
+            android:id="@+id/CardPersonaje"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -237,10 +241,12 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardInfo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:backgroundTint="@color/cardview_dark_background">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -274,6 +280,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/CardSalir"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
