@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +70,7 @@ public class principalmenu extends AppCompatActivity {
                 builder.setNeutralButton("OK", null);
                 builder.setCancelable(false);
 
+
                 AlertDialog dialog = builder.create();
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
@@ -76,14 +79,49 @@ public class principalmenu extends AppCompatActivity {
 
 
         /*Falta Spinner Personaje!!!!!!!!*/
+        personaje.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(principalmenu.this);
+                View mView = getLayoutInflater().inflate(R.layout.dialogo_spinner,null);
+                builder.setTitle(R.string.Personaje);
+                final Spinner mSpinner = (Spinner) mView.findViewById(R.id.spinner);
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(principalmenu.this, android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.listadoPersonajes));
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                mSpinner.setAdapter(adapter);
+                builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(mSpinner.getSelectedItem().toString().equalsIgnoreCase("Tarjeta amarilla")){
+                            personajeSeleccionado = 0;
+                        }else if (mSpinner.getSelectedItem().toString().equalsIgnoreCase("Tarjeta roja")){
+                            personajeSeleccionado = 1;
+                        }else if (mSpinner.getSelectedItem().toString().equalsIgnoreCase("Silbato")){
+                            personajeSeleccionado = 2;
+                        }else if (mSpinner.getSelectedItem().toString().equalsIgnoreCase("Balon")){
+                            personajeSeleccionado = 3;
+                        }
+
+                    }
+                });
+                builder.setCancelable(false);
+                builder.setView(mView);
+                AlertDialog dialog = builder.create();
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
+
+
+            }
+        });
         //Info
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(principalmenu.this);
-                builder.setTitle(R.string.info);
-                builder.setMessage(R.string.app_name );
+                builder.setTitle(R.string.Informacion);
+                builder.setMessage(R.string.info);
                 builder.setNeutralButton("OK", null);
                 builder.setCancelable(false);
 

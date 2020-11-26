@@ -22,5 +22,12 @@
     para señalarla. No hagas un click largo en una casilla donde no hay un elemento
     porque perderás. Ganas una vez hayas encontrado al árbitro</string>
     <string name="dificultad">DIFICULTAD</string>
-    <string name="info"></string>
+    <string name="info">App: RefereeMatch\n\nAutor: Raul Santiago Prieto\n\nWeb: www.raulsantiago.tech\n\n
+        GitHub: https://github.com/raulcalleti96\n\nAño: 2020\n\n</string>
+    <string-array name="listadoPersonajes">
+        <item>Tarjeta Amarilla</item>
+        <item>Tarjeta roja</item>
+        <item>Silbato</item>
+        <item>Balon</item>
+    </string-array>
 </resources>
