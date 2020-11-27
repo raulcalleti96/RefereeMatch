@@ -29,6 +29,26 @@ public class principalmenu extends AppCompatActivity {
         info = (CardView) findViewById(R.id.CardInfo);
         salir = (CardView) findViewById(R.id.CardSalir);
 
+        //Opción jugar
+        jugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(dificultad == 0){
+
+                    Intent intent = new Intent(principalmenu.this, facilActivity.class);
+                    startActivity(intent);
+
+                }else if (dificultad == 1){
+                    Intent intent = new Intent(principalmenu.this, intermedioActivity.class);
+                    startActivity(intent);
+                }else if (dificultad == 2){
+                    Intent intent = new Intent(principalmenu.this, dificilActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        //Opción Instrucciones
         instrucciones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
