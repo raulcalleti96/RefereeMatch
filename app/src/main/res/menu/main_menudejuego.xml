@@ -3,11 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/inicio"
+            android:id="@+id/nav_inicio"
             android:title="Inicio"
             android:icon="@mipmap/homeicon"/>
         <item
-            android:id="@+id/restart"
+            android:id="@+id/nav_restart"
             android:title="Empezar de nuevo"
             android:icon="@mipmap/restarticon"/>
 
@@ -20,21 +20,18 @@
 
             <menu>
                 <item
-                    android:id="@+id/Personaje"
+                    android:id="@+id/nav_pers"
                     android:title="@string/Personaje"
                     android:icon="@mipmap/personaje"/>
                 <item
-                    android:id="@+id/Instrucciones"
+                    android:id="@+id/nav_Instrucciones"
                     android:title="@string/Instrucciones"
                     android:icon="@mipmap/instrucicon"/>
                 <item
-                    android:id="@+id/Ajustes"
+                    android:id="@+id/nav_Ajustes"
                     android:title="@string/Ajustes"
                     android:icon="@mipmap/ajustesicon"/>
-                <item
-                    android:id="@+id/info"
-                    android:title="@string/Informacion"
-                    android:icon="@mipmap/infoicon"/>
+
             </menu>
         </item>
 
@@ -43,11 +40,15 @@
     <group android:checkableBehavior="single">
 
        <item
-           android:title="Salir">
+           android:title="Otros">
 
            <menu>
                <item
-                   android:id="@+id/Salir"
+                   android:id="@+id/nav_info"
+                   android:title="@string/Informacion"
+                   android:icon="@mipmap/infoicon"/>
+               <item
+                   android:id="@+id/nav_Salir"
                    android:title="@string/Salir"
                    android:icon="@mipmap/salidaicon"/>
            </menu>
