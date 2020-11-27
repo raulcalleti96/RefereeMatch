@@ -38,5 +38,9 @@
     <string name="nivelmediotiempo">03:00</string>
     <string name="niveldificiltext"> Nivel difícil</string>
     <string name="niveldificiltiempo">01:00</string>
+    <string name="perdidatiempo">Derrota por tiempo</string>
+    <string name="textoperdidatiempo">Lo sentimos, se le ha terminado el tiempo.¿Desea volver a empezar?</string>
+    <string name="Si">Sí</string>
+    <string name="No">No</string>
 
 </resources>

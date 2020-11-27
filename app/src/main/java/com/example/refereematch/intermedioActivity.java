@@ -3,6 +3,7 @@ package com.example.refereematch;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,10 +28,20 @@ public class intermedioActivity extends AppCompatActivity implements NavigationV
     Toolbar toolbarfin;
     Menu menu;
     TextView textView;
+    CountDownTimer countDownTimer;
+    TextView countDownText;
+    long contadortiempos = 180000; //3 min
 
     protected void onCreate(Bundle savedInstanceState) {
+        //Temporizador
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modointermedio);
+
+        //temporizador
+        countDownText = findViewById(R.id.textViewtiempomedio);
+        startTimer();
 
 
         //Menu
@@ -185,4 +196,53 @@ public class intermedioActivity extends AppCompatActivity implements NavigationV
         return true;
     }
 
+    public void startTimer(){
+        countDownTimer = new CountDownTimer(contadortiempos,1000){
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                contadortiempos = millisUntilFinished;
+                updateTimer();
+            }
+
+            @Override
+            public void onFinish() {
+                AlertDialog.Builder builder4 = new AlertDialog.Builder(intermedioActivity.this);
+                builder4.setTitle(R.string.perdidatiempo);
+                builder4.setMessage(R.string.textoperdidatiempo);
+                builder4.setPositiveButton(R.string.Si, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        recreate();
+                    }
+                });
+                builder4.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(intermedioActivity.this, principalmenu.class);
+                        startActivity(intent);
+                    }
+                });
+                builder4.setCancelable(false);
+
+                AlertDialog dialog4 = builder4.create();
+                dialog4.show();
+            }
+        }.start();
+    }
+
+    public void updateTimer(){
+        int minutos = (int) contadortiempos / 60000;
+        int segundos = (int) contadortiempos % 60000 / 1000;
+
+        String cambiotiempo;
+
+        cambiotiempo = "" + minutos;
+        cambiotiempo += ":";
+        if(segundos < 10) cambiotiempo += "0";
+        cambiotiempo +=segundos;
+
+        countDownText.setText(cambiotiempo);
+
+    }
 }
