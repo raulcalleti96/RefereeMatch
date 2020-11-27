@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="home"
+            android:title="Home"
+            android:icon="@mipmap/home"/>
+        <item
+            android:id="Restart"
+            android:title="Empezar de nuevo"
+            android:icon="@mipmap/restart"/>
+
+    </group>
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="Ajustes">
+
+            <menu>
+                <item
+                    android:id="Personaje"
+                    android:title="@string/Personaje"
+                    android:icon="@mipmap/personaje"/>
+                <item
+                    android:id="Instrucciones"
+                    android:title="@string/Instrucciones"
+                    android:icon="@mipmap/instrucciones"/>
+                <item
+                    android:id="Ajustes"
+                    android:title="@string/Ajustes"
+                    android:icon="@mipmap/ajustes"/>
+                <item
+                    android:id="info"
+                    android:title="@string/Informacion"
+                    android:icon="@mipmap/informacion"/>
+            </menu>
+        </item>
+
+
+    </group>
+    <group android:checkableBehavior="single">
+
+       <item
+           android:title="Salir">
+
+           <menu>
+               <item
+                   android:id="Salir"
+                   android:title="@string/Salir"
+                   android:icon="@mipmap/salir"/>
+           </menu>
+       </item>
+
+    </group>
+</menu>
