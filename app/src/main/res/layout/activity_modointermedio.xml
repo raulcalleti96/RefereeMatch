@@ -389,6 +389,24 @@
                         android:layout_height="wrap_content" />
 
                 </GridLayout>
+
+                <TextView
+                    android:id="@+id/textViewnivelmedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/nivelmediotext"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/textViewtiempomedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/nivelmediotiempo"
+                    android:textSize="100sp" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

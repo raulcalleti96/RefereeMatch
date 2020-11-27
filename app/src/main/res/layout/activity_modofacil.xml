@@ -391,13 +391,22 @@
                         android:layout_height="wrap_content" />
 
                 </GridLayout>
+
+                <TextView
+                    android:id="@+id/textViewnivelfacil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15pt"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/nivelfaciltext"
+                    android:textSize="36sp" />
+
             </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

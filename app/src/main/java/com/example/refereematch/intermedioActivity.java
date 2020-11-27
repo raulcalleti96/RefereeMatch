@@ -34,7 +34,7 @@ public class intermedioActivity extends AppCompatActivity implements NavigationV
 
 
         //Menu
-        drawerLayout = findViewById(R.id.drawer_layout2);
+        drawerLayout = findViewById(R.id.drawer_layout3);
         navigationView = findViewById(R.id.nav_view);
         toolbarfin = findViewById(R.id.toolbar2);
 

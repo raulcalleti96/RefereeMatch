@@ -32,4 +32,11 @@
     </string-array>
     <string name="nav_draw_abrir">Abrir nav</string>
     <string name="nav_draw_cerrar">Cerrar nav</string>
+    <string name="nivelfaciltext"> Nivel fácil</string>
+    <string name="nivelfaciltiempo">Libre</string>
+    <string name="nivelmediotext"> Nivel medio</string>
+    <string name="nivelmediotiempo">03:00</string>
+    <string name="niveldificiltext"> Nivel difícil</string>
+    <string name="niveldificiltiempo">01:00</string>
+
 </resources>

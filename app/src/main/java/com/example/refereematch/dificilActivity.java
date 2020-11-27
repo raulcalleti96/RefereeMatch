@@ -34,7 +34,7 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
 
 
         //Menu
-        drawerLayout = findViewById(R.id.drawer_layout3);
+        drawerLayout = findViewById(R.id.drawer_layout4);
         navigationView = findViewById(R.id.nav_view);
         toolbarfin = findViewById(R.id.toolbar2);
 
