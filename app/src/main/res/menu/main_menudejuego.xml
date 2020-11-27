@@ -3,37 +3,38 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="home"
-            android:title="Home"
-            android:icon="@mipmap/home"/>
+            android:id="@+id/inicio"
+            android:title="Inicio"
+            android:icon="@mipmap/homeicon"/>
         <item
-            android:id="Restart"
+            android:id="@+id/restart"
             android:title="Empezar de nuevo"
-            android:icon="@mipmap/restart"/>
+            android:icon="@mipmap/restarticon"/>
 
     </group>
     <group android:checkableBehavior="single">
 
         <item
-            android:title="Ajustes">
+            android:title="Ajustes"
+            >
 
             <menu>
                 <item
-                    android:id="Personaje"
+                    android:id="@+id/Personaje"
                     android:title="@string/Personaje"
                     android:icon="@mipmap/personaje"/>
                 <item
-                    android:id="Instrucciones"
+                    android:id="@+id/Instrucciones"
                     android:title="@string/Instrucciones"
-                    android:icon="@mipmap/instrucciones"/>
+                    android:icon="@mipmap/instrucicon"/>
                 <item
-                    android:id="Ajustes"
+                    android:id="@+id/Ajustes"
                     android:title="@string/Ajustes"
-                    android:icon="@mipmap/ajustes"/>
+                    android:icon="@mipmap/ajustesicon"/>
                 <item
-                    android:id="info"
+                    android:id="@+id/info"
                     android:title="@string/Informacion"
-                    android:icon="@mipmap/informacion"/>
+                    android:icon="@mipmap/infoicon"/>
             </menu>
         </item>
 
@@ -46,9 +47,9 @@
 
            <menu>
                <item
-                   android:id="Salir"
+                   android:id="@+id/Salir"
                    android:title="@string/Salir"
-                   android:icon="@mipmap/salir"/>
+                   android:icon="@mipmap/salidaicon"/>
            </menu>
        </item>
 
