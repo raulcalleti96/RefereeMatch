@@ -34,24 +34,144 @@
                 android:id="@+id/toolbar2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:background="#1D1F2B"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 app:navigationIcon="@mipmap/menu" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="336dp"
-                android:layout_marginEnd="159dp"
-                android:text="Modo Facil"
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="411dp"
+                android:layout_height="671dp"
+                android:layout_marginBottom="56dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="8"
+                    android:columnOrderPreserved="false"
+                    android:orientation="vertical"
+                    android:rowCount="8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button9"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/button10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+
+                    <Button
+                        android:id="@+id/button16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button" />
+                </GridLayout>
+            </LinearLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
