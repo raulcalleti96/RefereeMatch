@@ -57,21 +57,18 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
         countDownText = findViewById(R.id.textViewtiempodificil);
         startTimer();
 
-
-
         //Menu
         drawerLayout = findViewById(R.id.drawer_layout4);
         navigationView = findViewById(R.id.nav_view);
         toolbarfin = findViewById(R.id.toolbar2);
-
         setSupportActionBar(toolbarfin);
-
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbarfin, R.string.nav_draw_abrir, R.string.nav_draw_cerrar);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Zonajuego
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayoutdif);
         fondo = new Tablero(this);
         fondo.setOnTouchListener(this);
@@ -82,26 +79,12 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
                 casillas[f][c] = new Casilla();
             }
         }
-        this.disponerBombas();
-        this.contarBombasPerimetro();
+        this.colocarPersonaje();
+        this.contarPersonAlrededor();
 
     }
     /*======Parte de juego=====*/
 
-
-    public void presionado(View v) {
-        casillas = new Casilla[8][8];
-        for (int f = 0; f < 8; f++) {
-            for (int c = 0; c < 8; c++) {
-                casillas[f][c] = new Casilla();
-            }
-        }
-        this.disponerBombas();
-        this.contarBombasPerimetro();
-        activo = true;
-
-        fondo.invalidate();
-    }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -141,12 +124,12 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
 
                             activo = false;
                         } else if (casillas[f][c].contenido == 0)
-                            recorrer(f, c);
+                            recorrerFilas(f, c);
                         fondo.invalidate();
                     }
                 }
             }
-        if (gano() && activo) {
+        if (ganar() && activo) {
             AlertDialog.Builder builder4 = new AlertDialog.Builder(dificilActivity.this);
             builder4.setTitle(R.string.titulovictora);
             builder4.setMessage(R.string.victoria);
@@ -190,7 +173,7 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
                 ancho = fondo.getWidth();
             else
                 ancho = fondo.getHeight();
-            int anchocua = ancho / 8;
+            int anchototal = ancho / 8;
             Paint paint = new Paint();
             paint.setTextSize(20);
             Paint paint2 = new Paint();
@@ -199,21 +182,21 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
             paint2.setARGB(255, 0, 0, 255);
             Paint paintlinea1 = new Paint();
             paintlinea1.setARGB(255, 255, 255, 255);
-            int filaact = 0;
+            int filaactual = 0;
             for (int f = 0; f < 8; f++) {
                 for (int c = 0; c < 8; c++) {
-                    casillas[f][c].fijarxy(c * anchocua, filaact, anchocua);
+                    casillas[f][c].fijarxy(c * anchototal, filaactual, anchototal);
                     if (casillas[f][c].destapado == false)
                         paint.setARGB(153, 204, 204, 204);
                     else
                         paint.setARGB(255, 153, 153, 153);
-                    canvas.drawRect(c * anchocua, filaact, c * anchocua
-                            + anchocua - 2, filaact + anchocua - 2, paint);
+                    canvas.drawRect(c * anchototal, filaactual, c * anchototal
+                            + anchototal - 2, filaactual + anchototal - 2, paint);
                     // linea blanca
-                    canvas.drawLine(c * anchocua, filaact, c * anchocua
-                            + anchocua, filaact, paintlinea1);
-                    canvas.drawLine(c * anchocua + anchocua - 1, filaact, c
-                                    * anchocua + anchocua - 1, filaact + anchocua,
+                    canvas.drawLine(c * anchototal, filaactual, c * anchototal
+                            + anchototal, filaactual, paintlinea1);
+                    canvas.drawLine(c * anchototal + anchototal - 1, filaactual, c
+                                    * anchototal + anchototal - 1, filaactual + anchototal,
                             paintlinea1);
 
                     if (casillas[f][c].contenido >= 1
@@ -221,8 +204,8 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
                             && casillas[f][c].destapado)
                         canvas.drawText(
                                 String.valueOf(casillas[f][c].contenido), c
-                                        * anchocua + (anchocua / 2) - 8,
-                                filaact + anchocua / 2, paint2);
+                                        * anchototal + (anchototal / 2) - 8,
+                                filaactual + anchototal / 2, paint2);
 
                     if (casillas[f][c].contenido == 80
                             && casillas[f][c].destapado) {
@@ -232,25 +215,25 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
                         if(principalmenu.personajeSeleccionado == 0){
                             b = BitmapFactory.decodeResource(getResources(), R.drawable.amarilla);
                             bomba.setColor(Color.RED);
-                            canvas.drawBitmap(b,c * anchocua + ((anchocua / 2)-70),filaact + ((anchocua / 2)-70),bomba);
+                            canvas.drawBitmap(b,c * anchototal + ((anchototal / 2)-70),filaactual + ((anchototal / 2)-70),bomba);
                         }else  if (principalmenu.personajeSeleccionado == 1){
                             b = BitmapFactory.decodeResource(getResources(), R.drawable.roja);
                             bomba.setColor(Color.RED);
-                            canvas.drawBitmap(b,c * anchocua + ((anchocua / 2)-70),filaact + ((anchocua / 2)-70),bomba);
+                            canvas.drawBitmap(b,c * anchototal + ((anchototal / 2)-70),filaactual + ((anchototal / 2)-70),bomba);
                         }else if(principalmenu.personajeSeleccionado == 2){
                             b = BitmapFactory.decodeResource(getResources(), R.drawable.silbato);
                             bomba.setColor(Color.RED);
-                            canvas.drawBitmap(b,c * anchocua + ((anchocua / 2)-70),filaact + ((anchocua / 2)-70),bomba);
+                            canvas.drawBitmap(b,c * anchototal + ((anchototal / 2)-70),filaactual + ((anchototal / 2)-70),bomba);
 
                         }
                     }
 
                 }
-                filaact = filaact + anchocua;
+                filaactual = filaactual + anchototal;
             }
         }
     }
-    private void disponerBombas() {
+    private void colocarPersonaje() {
         int cantidad = 8;
         do {
             int fila = (int) (Math.random() * 8);
@@ -262,7 +245,7 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
         } while (cantidad != 0);
     }
 
-    private boolean gano() {
+    private boolean ganar() {
         int cant = 0;
         for (int f = 0; f < 8; f++)
             for (int c = 0; c < 8; c++)
@@ -274,7 +257,7 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
             return false;
     }
 
-    private void contarBombasPerimetro() {
+    private void contarPersonAlrededor() {
         for (int f = 0; f < 8; f++) {
             for (int c = 0; c < 8; c++) {
                 if (casillas[f][c].contenido == 0) {
@@ -323,19 +306,19 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
         return total;
     }
 
-    private void recorrer(int fil, int col) {
+    private void recorrerFilas(int fil, int col) {
         if (fil >= 0 && fil < 8 && col >= 0 && col < 8) {
             if (casillas[fil][col].contenido == 0) {
                 casillas[fil][col].destapado = true;
                 casillas[fil][col].contenido = 50;
-                recorrer(fil, col + 1);
-                recorrer(fil, col - 1);
-                recorrer(fil + 1, col);
-                recorrer(fil - 1, col);
-                recorrer(fil - 1, col - 1);
-                recorrer(fil - 1, col + 1);
-                recorrer(fil + 1, col + 1);
-                recorrer(fil + 1, col - 1);
+                recorrerFilas(fil, col + 1);
+                recorrerFilas(fil, col - 1);
+                recorrerFilas(fil + 1, col);
+                recorrerFilas(fil - 1, col);
+                recorrerFilas(fil - 1, col - 1);
+                recorrerFilas(fil - 1, col + 1);
+                recorrerFilas(fil + 1, col + 1);
+                recorrerFilas(fil + 1, col - 1);
             } else if (casillas[fil][col].contenido >= 1
                     && casillas[fil][col].contenido <= 8) {
                 casillas[fil][col].destapado = true;
@@ -346,7 +329,9 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
 
 
 
-    /*======Parte de juego=====*/
+    /*======Fin Parte de juego=====*/
+
+    /*======Parte de menu=====*/
 
     @Override
     public void onBackPressed() {
@@ -504,6 +489,9 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+    /*======FIN Parte de menu=====*/
+
+    /*======Parte de crontometro=====*/
     public void startTimer(){
         countDownTimer = new CountDownTimer(contadortiempos,1000){
 
@@ -558,5 +546,5 @@ public class dificilActivity extends AppCompatActivity implements NavigationView
         countDownText.setText(cambiotiempo);
 
     }
-
+    /*======FIN Parte de cronometro=====*/
 }
