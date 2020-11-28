@@ -41,6 +41,8 @@
     <string name="textoperdidatiempo">Lo sentimos, se le ha terminado el tiempo.¿Desea volver a empezar?</string>
     <string name="Si">Sí</string>
     <string name="No">No</string>
-    <string name="victoria">Enhorabuena ha ganado!!!</string>
-    <string name="derrota">Lo siento ha perdido</string>
+    <string name="titulovictora">VICTORIA!</string>
+    <string name="tituloderrota">DERROTA!</string>
+    <string name="victoria">ENHORABUENA HA GANADO!\n ¿Desea volver a jugar?</string>
+    <string name="derrota">LO SENTIMOS, HA PERDIDO!\n ¿Desea volver a jugar?</string>
 </resources>

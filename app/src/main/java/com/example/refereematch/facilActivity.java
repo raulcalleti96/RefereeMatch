@@ -115,8 +115,27 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
                             (int) event.getY())) {
                         casillas[f][c].destapado = true;
                         if (casillas[f][c].contenido == 80) {
-                            Toast.makeText(this, "Booooooooommmmmmmmmmmm",
-                                    Toast.LENGTH_LONG).show();
+
+                            AlertDialog.Builder builder4 = new AlertDialog.Builder(facilActivity.this);
+                            builder4.setTitle(R.string.tituloderrota);
+                            builder4.setMessage(R.string.derrota);
+                            builder4.setPositiveButton(R.string.Si, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    recreate();
+                                }
+                            });
+                            builder4.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(facilActivity.this, principalmenu.class);
+                                    startActivity(intent);
+                                }
+                            });
+                            builder4.setCancelable(false);
+
+                            AlertDialog dialog4 = builder4.create();
+                            dialog4.show();
                             activo = false;
                         } else if (casillas[f][c].contenido == 0)
                             recorrer(f, c);
@@ -125,12 +144,32 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
                 }
             }
         if (gano() && activo) {
-            Toast.makeText(this, "Ganaste", Toast.LENGTH_LONG).show();
+            AlertDialog.Builder builder4 = new AlertDialog.Builder(facilActivity.this);
+            builder4.setTitle(R.string.titulovictora);
+            builder4.setMessage(R.string.victoria);
+            builder4.setPositiveButton(R.string.Si, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    recreate();
+                }
+            });
+            builder4.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(facilActivity.this, principalmenu.class);
+                    startActivity(intent);
+                }
+            });
+            builder4.setCancelable(false);
+
+            AlertDialog dialog4 = builder4.create();
+            dialog4.show();
             activo = false;
         }
 
         return true;
     }
+
     class Tablero  extends View {
         public Tablero(Context context) {
             super(context);
