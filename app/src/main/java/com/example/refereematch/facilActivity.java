@@ -3,7 +3,6 @@ package com.example.refereematch;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -11,21 +10,17 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -37,9 +32,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
 
 
 public class facilActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnTouchListener {
@@ -136,6 +128,12 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
 
                             AlertDialog dialog4 = builder4.create();
                             dialog4.show();
+                            Window window = dialog4.getWindow();
+                            WindowManager.LayoutParams wlp = window.getAttributes();
+                            wlp.gravity = Gravity.BOTTOM;
+                            wlp.flags &= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                            window.setAttributes(wlp);
+
                             activo = false;
                         } else if (casillas[f][c].contenido == 0)
                             recorrer(f, c);
@@ -164,6 +162,11 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
 
             AlertDialog dialog4 = builder4.create();
             dialog4.show();
+            Window window = dialog4.getWindow();
+            WindowManager.LayoutParams wlp = window.getAttributes();
+            wlp.gravity = Gravity.BOTTOM;
+            wlp.flags &= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            window.setAttributes(wlp);
             activo = false;
         }
 
@@ -396,6 +399,11 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
                 AlertDialog dialog = builder.create();
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
+                Window window = dialog.getWindow();
+                WindowManager.LayoutParams wlp = window.getAttributes();
+                wlp.gravity = Gravity.BOTTOM;
+                wlp.flags &= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                window.setAttributes(wlp);
                 //Valorar simplemente el cambio de personaje sin cambiar tablero
                 break;
             case R.id.nav_Instrucciones:
@@ -407,6 +415,11 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
 
                 AlertDialog dialog2 = builder2.create();
                 dialog2.show();
+                Window window2 = dialog2.getWindow();
+                WindowManager.LayoutParams wlp2 = window2.getAttributes();
+                wlp2.gravity = Gravity.BOTTOM;
+                wlp2.flags &= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                window2.setAttributes(wlp2);
                 break;
             case R.id.nav_Ajustes:
                 AlertDialog.Builder builder3 = new AlertDialog.Builder(facilActivity.this);
@@ -456,6 +469,11 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
                 AlertDialog dialog3 = builder3.create();
                 dialog3.setCanceledOnTouchOutside(false);
                 dialog3.show();
+                Window window3 = dialog3.getWindow();
+                WindowManager.LayoutParams wlp3 = window3.getAttributes();
+                wlp3.gravity = Gravity.BOTTOM;
+                wlp3.flags &= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                window3.setAttributes(wlp3);
 
                 break;
             case R.id.nav_info:
@@ -467,6 +485,12 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
 
                 AlertDialog dialog4 = builder4.create();
                 dialog4.show();
+
+                Window window4 = dialog4.getWindow();
+                WindowManager.LayoutParams wlp4 = window4.getAttributes();
+                wlp4.gravity = Gravity.BOTTOM;
+                wlp4.flags &= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                window4.setAttributes(wlp4);
                 break;
             case R.id.nav_Salir:
                 finishAffinity();
