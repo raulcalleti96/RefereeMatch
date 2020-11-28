@@ -120,8 +120,6 @@ public class principalmenu extends AppCompatActivity {
                             personajeSeleccionado = 1;
                         }else if (mSpinner.getSelectedItem().toString().equalsIgnoreCase("Silbato")){
                             personajeSeleccionado = 2;
-                        }else if (mSpinner.getSelectedItem().toString().equalsIgnoreCase("Balon")){
-                            personajeSeleccionado = 3;
                         }
 
                     }

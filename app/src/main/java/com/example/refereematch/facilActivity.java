@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -178,9 +180,22 @@ public class facilActivity extends AppCompatActivity implements NavigationView.O
                     if (casillas[f][c].contenido == 80
                             && casillas[f][c].destapado) {
                         Paint bomba = new Paint();
-                        bomba.setARGB(255, 255, 0, 0);
-                        canvas.drawCircle(c * anchocua + (anchocua / 2),
-                                filaact + (anchocua / 2), 8, bomba);
+                        Bitmap b  ;
+
+                        if(principalmenu.personajeSeleccionado == 0){
+                           b = BitmapFactory.decodeResource(getResources(), R.drawable.amarilla);
+                           bomba.setColor(Color.RED);
+                            canvas.drawBitmap(b,c * anchocua + ((anchocua / 2)-70),filaact + ((anchocua / 2)-70),bomba);
+                        }else  if (principalmenu.personajeSeleccionado == 1){
+                            b = BitmapFactory.decodeResource(getResources(), R.drawable.roja);
+                            bomba.setColor(Color.RED);
+                            canvas.drawBitmap(b,c * anchocua + ((anchocua / 2)-70),filaact + ((anchocua / 2)-70),bomba);
+                        }else if(principalmenu.personajeSeleccionado == 2){
+                            b = BitmapFactory.decodeResource(getResources(), R.drawable.silbato);
+                            bomba.setColor(Color.RED);
+                            canvas.drawBitmap(b,c * anchocua + ((anchocua / 2)-70),filaact + ((anchocua / 2)-70),bomba);
+
+                        }
                     }
 
                 }

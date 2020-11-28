@@ -28,7 +28,6 @@
         <item>Tarjeta Amarilla</item>
         <item>Tarjeta roja</item>
         <item>Silbato</item>
-        <item>Balon</item>
     </string-array>
     <string name="nav_draw_abrir">Abrir nav</string>
     <string name="nav_draw_cerrar">Cerrar nav</string>
